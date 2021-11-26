@@ -1,0 +1,224 @@
+
+:root{
+    --main-color: #443;
+    --border-radius:95% 4% 97% 5%/ 4% 94% 3% 95%; 
+    --border-radius-hover:4% 95% 6% 95% / 95% 4% 92% 5%;
+    --border:var(--main-color) solid .2rem;
+    --border-hover:var(--main-color) dashed .2rem;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.box{
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px;
+    text-align: center;
+ }
+
+.btn{
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    border: var(--border);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+.btn:hover{
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);
+}
+.header .logo{
+    font-size: 3.2rem;
+    font-family: "Dancing Script", cursive;
+    margin: 0;
+    text-shadow: 0 0 5px red, 0 0 15px red, 0 0 30px red, 0 0 50px red;
+}
+.header .logo img{
+    padding-left: .5rem;
+    width: 3.2rem;
+}
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.header .btn{
+    margin-top: 0;
+}
+#menu-btn{
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+    /* MAIN STARTS */
+.home{
+    min-height: 100vh;
+    padding-top: 12rem;
+    background: url(../assets/img/fondoBar.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.home .row .content{
+    flex: 1 1 42rem;
+    backdrop-filter: blur(4px) saturate(182%);
+    -webkit-backdrop-filter: blur(4px) saturate(182%);
+    background-color: rgba(228, 228, 228, 0.27);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.home .row .image{
+    flex: 1 1 42rem;
+    padding-top: 10rem;
+    text-align: center;
+}
+.home .row .image img{
+    height: 35rem;
+    animation: float 4s linear infinite;
+}
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-7rem);
+    }
+}
+
+.home .row .content h3{
+    font-size: 6.5rem;
+    color: rgb(49, 49, 49);
+}
+
+.home .image-slider{
+    text-align: center;
+    padding: 3rem 0;
+}
+.home .image-slider img{
+    height: 13rem;
+    margin:0 3rem;
+    cursor: pointer;
+    margin-top: 3.5rem;
+}
+.home .image-slider img:hover{
+    transform: translateY(-2rem);
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    section{ 
+        padding: 2rem;
+    }
+    
+}
+
+@media(max-width: 768px){
+    #menu-btn{
+        display: initial;
+    }
+
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+ 
+    .header .navbar{
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100% );
+    }
+
+    .header .navbar a{
+        display: block;
+        font-size: 2.2rem;
+        margin: 0;
+        padding: 1.5rem 2rem;
+    }
+    .home{
+        text-align: center;
+    }
+    .home .row .content h3{
+        font-size: 4rem;
+    }
+
+    
+}
+
+
+@media(max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .home .row .image img{
+        height: 35rem;
+        /* width: 100%; */
+    }
+
+    
+}
